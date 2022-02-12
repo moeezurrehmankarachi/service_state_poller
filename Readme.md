@@ -1,4 +1,4 @@
-#Scheduler(Poller) service:
+# Scheduler(Poller) service:
 <br>
 A service that concurrently checks each "external service" for availability and marks "OK" only if HTTP 200 response is received. Otherwise "Failed" is marked. The service is written in a re The service schedule is configurable via Spring CRON expressions. A valid CRON expression is ```cron.expression = */20 * * * * *```, by which the service will execute every 20 seconds. Another example would be ```cron.expression = 0 */2 * * * *```, which will run every 2nd minute. These properties are defined in the ```application.properties``` file.
 <br>If it is required to create the jar file use ```mvn clean package``` in the project directory. Use ```mvn clean package -DskipTests``` to make jar without running tests. The program can be run using ```java -jar target/service_state_poller-0.0.1-SNAPSHOT.jar```.
